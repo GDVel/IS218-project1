@@ -20,6 +20,26 @@ foreach ($array as $key => $value)
 }
 
 echo '</table>';
+//try this from stackoverflow and php manual?
+ public $csv;
+   public $column;
+   public function readcsv($csv,$column){
+      ini_set('auto_detect_line_endings',TRUE);
+      if(($handle = fopen($csv,"r")) !== FALSE){
+         while(($row=fgetcsv($handle,",")) !== FALSE){
+	    if($column == TRUE){
+	       $column = $row;
+	       $column = FALSE;
+	    }
+	    else{
+	       $record = array_combine($column,$row);
+	       $records[] = $record;
+	       $university[] = $row[1]; 
+	       //creates array for university names
+	    }
+	 }
+      fclose($handle);
+      }
 ?>
 </body>
 </html>

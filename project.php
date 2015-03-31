@@ -1,3 +1,7 @@
+<html>
+<body>
+      <h3> Universities </h3>
+      
 <?php
 $array = file('public_html/hd2013.csv');
 
@@ -17,3 +21,5 @@ foreach ($array as $key => $value)
 
 echo '</table>';
 ?>
+</body>
+</html>

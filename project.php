@@ -3,24 +3,8 @@
       <h3> Universities </h3>
       
 <?php
-$array = file('public_html/hd2013.csv');
 
-foreach($array as $key => $var)
-{
-   $array[$key] = explode(',' , $var);
-}
-
-echo '<table class ="samples">';
-foreach ($array as $key => $value)
-{
-  $i++;
-  echo '<tr class=d' . ($i & 1) . ' align="center">';
-  echo '<td>' . $arrary[$key][0] . </td>';
-  echo '</tr>';
-}
-
-echo '</table>';
-//try this from stackoverflow and php manual?
+//tutorial from stackoverflow and php manual
  public $csv;
    public $column;
    public function readcsv($csv,$column){
@@ -40,6 +24,15 @@ echo '</table>';
 	 }
       fclose($handle);
       }
+      
+      if(empty($_GET)){
+      foreach($records as $record){
+      	$i++;
+      	$record_num = $i - 1;
+	 echo '<a href='.'"http://local.project/project.php?record='.$record_num.'"'.'>'.$name[$record_num].'</a>';
+	 echo'</p>';
+       }
+    }
 ?>
 </body>
 </html>

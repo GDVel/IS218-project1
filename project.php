@@ -29,7 +29,7 @@
       foreach($records as $record){
       	$i++;
       	$recnum= $i;
-	 echo '<a href='.'"http://localhost/project/project.php?record='.$recnum.'"'.'>'.$university[$recnum].'</a>';
+	 echo '<a href='.'"http://web.njit.edu/~ve23/project.php?record='.$recnum.'"'.'>'.$university[$recnum].'</a>';
 	 echo'</p>';
        }
     }

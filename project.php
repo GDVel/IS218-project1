@@ -5,10 +5,11 @@
 <?php
 
 //tutorial from stackoverflow and php manual
- public $csv;
+   public $csv;
    public $column;
    public function readcsv($csv,$column){
-      ini_set('auto_detect_line_endings',TRUE);
+   
+   
       if(($handle = fopen($csv,"r")) !== FALSE){
          while(($row=fgetcsv($handle,",")) !== FALSE){
 	    if($column == TRUE){
@@ -24,15 +25,26 @@
 	 }
       fclose($handle);
       }
-      
+      //records for the page 
       if(empty($_GET)){
       foreach($records as $record){
       	$i++;
-      	$record_num = $i - 1;
-	 echo '<a href='.'"http://local.project/project.php?record='.$record_num.'"'.'>'.$university[$record_num].'</a>';
+      	$recnum= $i;
+	 echo '<a href='.'"http://local.project/project.php?record='.$recnum.'"'.'>'.$university[$record_num].'</a>';
 	 echo'</p>';
        }
     }
+    $record = $records[$_GET['record']];
+    echo"<table border='1'>";
+    foreach($record as $key => $input){
+       echo"<tr>";
+       echo"<th>University</th>"
+       echo"<td>$input</td>";
+       echo"</tr>";
+    }
+    echo"</table>";
+  }
+}
 ?>
 </body>
 </html>

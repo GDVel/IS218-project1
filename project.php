@@ -9,7 +9,6 @@
    public $column;
    public function readcsv($csv,$column){
    
-   
       if(($handle = fopen($csv,"r")) !== FALSE){
          while(($row=fgetcsv($handle,",")) !== FALSE){
 	    if($column == TRUE){
@@ -30,16 +29,17 @@
       foreach($records as $record){
       	$i++;
       	$recnum= $i;
-	 echo '<a href='.'"http://localhost/project/project.php?record='.$recnum.'"'.'>'.$university[$record_num].'</a>';
+	 echo '<a href='.'"http://localhost/project/project.php?record='.$recnum.'"'.'>'.$university[$recnum].'</a>';
 	 echo'</p>';
        }
     }
     $record = $records[$_GET['record']];
+    //table with varnames and their results from csv file
     echo"<table border='0'>";
-    foreach($record as $key => $input){
+    foreach($record as $varname=> $result){
        echo"<tr>";
-       echo"<th>University</th>"
-       echo"<td>$input</td>";
+       echo"<th>$varname</th>"
+       echo"<td>$result</td>";
        echo"</tr>";
     }
     echo"</table>";

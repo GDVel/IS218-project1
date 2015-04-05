@@ -45,6 +45,9 @@
     echo"</table>";
   }
 }
+//hd2013.csv is shorter version of it because full wouldn't load in afs
+$file = new csvfile();
+$file->readcsv("hd2013.csv", TRUE);
 ?>
 </body>
 </html>

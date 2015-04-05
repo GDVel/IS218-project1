@@ -35,7 +35,7 @@
        }
     }
     $record = $records[$_GET['record']];
-    echo"<table border='1'>";
+    echo"<table border='0'>";
     foreach($record as $key => $input){
        echo"<tr>";
        echo"<th>University</th>"
